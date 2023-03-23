@@ -74,7 +74,7 @@ void frame(std::string input, int img[MAX_H][MAX_W]){
 
   for(int row = a; row < h-a; row++) {
     for (int col = b; col < w-b; col++){
-        if (row == a ||  col == b || row >= h-a  || col >= w-a  || row == h * 3/4  ||col == w * 3/4 )
+        if (row == a ||  col == b || row >= h-a  || col >= w-b  || row == h * 3/4  ||col == w * 3/4 )
           img[row][col] = 255;
     }
   }
