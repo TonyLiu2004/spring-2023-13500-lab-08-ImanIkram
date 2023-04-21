@@ -50,11 +50,11 @@ void box(std::string input, int img[MAX_H][MAX_W]){
   int h, w;
   readImage(input, img, h, w); 
 
-int a = round((h*25)/100);
-int b = round((w*25)/100);
+int borderHeight = round((h*25)/100);
+int borderWidth = round((w*25)/100);
 
-  for(int row = a; row < h-a; row++) {
-    for(int col = b; col < w-b; col++) {
+  for(int row = borderHeight; row < h-borderHeight; row++) {
+    for(int col = borderWidth; col < w-borderWidth; col++) {
         img[row][col] = 255;
     }
   }
@@ -69,12 +69,12 @@ void frame(std::string input, int img[MAX_H][MAX_W]){
     int h, w;
     readImage(input, img, h, w);
 
-    int a = round((h*25)/100);
-    int b = round((w*25)/100);
+    int borderHeight = round((h*25)/100);
+    int borderWidth = round((w*25)/100);
 
-  for(int row = a; row < h-a; row++) {
-    for (int col = b; col < w-b; col++){
-        if (row == a ||  col == b || row >= h-a  || col >= w-b  || row == h * 3/4  ||col == w * 3/4 )
+  for(int row = borderHeight; row < h-borderHeight; row++) {
+    for (int col = borderWidth; col < w-borderWidth; col++){
+        if (row == borderHeight ||  col == borderWidth || row >= h-borderHeight  || col >= w-borderWidth  || row == h * 3/4  ||col == w * 3/4 )
           img[row][col] = 255;
     }
   }
